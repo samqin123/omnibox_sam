@@ -7,10 +7,8 @@ services:
     ports:
       - "7123:7023"
     restart: unless-stopped
-    environment:
-      - PANSOU_URL=http://localhost:8888
     volumes:
       - ./app/data:/app/data
 
 volumes:
-  omnibox:
+  omnibox-data:
