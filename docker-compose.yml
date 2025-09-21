@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  omnibox:
+    image: lampon/omnibox:latest
+    container_name: omnibox
+    ports:
+      - "7123:7023"
+    restart: unless-stopped
+    environment:
+      - PANSOU_URL=http://localhost:8888
+    volumes:
+      - ./app/data:/app/data
+
+volumes:
+  omnibox:
