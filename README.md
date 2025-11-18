@@ -83,6 +83,18 @@ docker compose restart
 - 健康检查机制
 - 缓存优化配置
 
+#### PanSou 地址配置（关键）
+- 推荐在容器内通过服务名访问 PanSou：`http://pansou:8888`
+
+- 依据：在 `docker-compose.yml` 中为 Omnibox 显式设置：
+  ```yaml
+  environment:
+    - PANSOU_URL=http://pansou:8888
+  ```
+- 备选方案
+- 如果因为历史设置被覆盖，建议在 UI 中更新或使用 host.docker.internal 作为过渡：
+- 容器访问宿主机端口： http://host.docker.internal:8888
+
 ## 致谢
 
 ### Omnibox 项目
