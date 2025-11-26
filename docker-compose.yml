@@ -22,6 +22,7 @@ services:
     ports:
       - "8888:8888"
     environment:
+      - AUTH_ENABLED=false
       - PORT=8888
       - CHANNELS=CosMM18,avpush,ribenseyuge1,cilitu,cctav,ppg1314,avab01,SeseAnime,QiangJAv,missavv,avwmjav,TGJAV,AVWUMAYUANPIAN,jpccav,PornXOS,CRAVWM12,MDFL88,madoua821,SanJiPian_HanGuo,sexlife520,CCCTAV,AVnew,tgsearchers3,Aliyun_4K_Movies,bdbdndn11,yunpanx,bsbdbfjfjff,yp123pan,sbsbsnsqq,yunpanxunlei,tianyifc,BaiduCloudDisk,txtyzy,peccxinpd,gotopan,PanjClub,kkxlzy,baicaoZY,MCPH01,bdwpzhpd,ysxb48,jdjdn1111,yggpan,MCPH086,zaihuayun,Q66Share,Oscar_4Kmovies,ucwpzy,shareAliyun,alyp_1,dianyingshare,Quark_Movies,XiangxiuNBB,ydypzyfx,ucquark,xx123pan,yingshifenxiang123,zyfb123,tyypzhpd,tianyirigeng,cloudtianyi,hdhhd21,Lsp115,oneonefivewpfx,qixingzhenren,taoxgzy,Channel_Shares_115,tyysypzypd,vip115hot,wp123zy,yunpan139,yunpan189,yunpanuc,yydf_hzl,leoziyuan,pikpakpan,Q_dongman,yoyokuakeduanju
       # 必须指定启用的插件，多个插件用逗号分隔
@@ -59,10 +60,11 @@ services:
 volumes:
   omnibox-data:
   pansou-cache:
-    name: pansou-cache
-    external: true
+  # 如果需要对接单独的pansou项目，否则会报错
+  #  name: pansou-cache
+  #  external: true
 
 networks:
   pansou-network:
     name: pansou-network
-    external: true
+  #  external: true
